@@ -1,20 +1,31 @@
 package main
 
-// find average given function parameters 
+// find average given function parameters
 // no return statments allowed
-func average(a, b, c int){
+func average(a, b, c int, pavg *int) {
 
-	average := a+b/2
-	
+	*pavg = (a + b + c) / 3
 }
 
 // find min and maxmimum from the given function parameters
-// 
-func min_max(a, b, c int) (int, int){
+//
+func min_max(a, b, c int) (int, int) {
 
-	min := 0
-	max := 0
+	min := a
+	max := a
 
-	
-	return min
+	if b > max {
+		max = b
+	}
+	if c > max {
+		max = c
+	}
+	if b < min {
+		min = b
+	}
+	if c < min {
+		min = c
+	}
+
+	return min, max
 }
